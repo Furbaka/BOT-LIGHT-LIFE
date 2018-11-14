@@ -321,6 +321,15 @@ bot.on('message', message => {
 			var result = Math.floor((Math.random() * sayings.length) + 0);
 			message.channel.sendMessage(sayings[result]);
     }
+	if (message.content.includes("pas de ouf")) {
+    	var sayings52 = ["LyymuxX c'est toi !?",
+										"MEC JSUIS UN ABONEY !",
+										"JTM TRO PEPITO ! euh... Panini",
+		       								"Pem!";
+
+			var result = Math.floor((Math.random() * sayings52.length) + 0);
+			message.channel.sendMessage(sayings52[result]);
+    }
 	
     if (message.content.startsWith(prefix + "supersondage")) {
 	
