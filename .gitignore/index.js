@@ -325,7 +325,7 @@ bot.on('message', message => {
     	var sayings52 = ["LyymuxX c'est toi !?",
 										"MEC JSUIS UN ABONEY !",
 										"JTM TRO PEPITO ! euh... Panini",
-		       								"Pem!";
+		       								"Pem!"];
 
 			var result = Math.floor((Math.random() * sayings52.length) + 0);
 			message.channel.sendMessage(sayings52[result]);
