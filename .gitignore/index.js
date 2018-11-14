@@ -330,6 +330,15 @@ bot.on('message', message => {
 			var result = Math.floor((Math.random() * sayings52.length) + 0);
 			message.channel.sendMessage(sayings52[result]);
     }
+	if (message.content.includes("pem")) {
+    	var sayings52 = ["PEM!",
+										"pem!",
+										"peeeeeeeeeeeeeeem!",
+		       								"Pam!"];
+
+			var result = Math.floor((Math.random() * sayings52.length) + 0);
+			message.channel.sendMessage(sayings52[result]);
+    }
 	
     if (message.content.startsWith(prefix + "supersondage")) {
 	
