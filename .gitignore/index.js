@@ -94,12 +94,12 @@ bot.on('message', message => {
 	var knuckles = bot.emojis.get("432968588383748116");
 	var lolidragon = bot.emojis.get("433289550375419904");
 	var dab = bot.emojis.get("432915228947120129");
-           var sayings = [`FOLLOW ME MA BRUDDAH I KNOW DA WAE !\n ${knuckles}${knuckles}${knuckles}`,
-										`COME ON MY BRUDAH WE WILL MAKE AN ARMY !\n ${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}`,
-										`DO YOU KNOW DA WAE ! ${knuckles}`,
-		       								`WER IS DA WAE ? ${knuckles}` ,
-										`WER IS DA QUEEN ? ${knuckles}`,
-		       								`THERE IS DA QUEEN !\n${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}${lolidragon}`];
+           var sayings = ["FOLLOW ME MA BRUDDAH I KNOW DA WAE !\n ${knuckles}${knuckles}${knuckles}",
+										"COME ON MY BRUDAH WE WILL MAKE AN ARMY !\n ${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}",
+										"DO YOU KNOW DA WAE ! ${knuckles}",
+		       								"WER IS DA WAE ? ${knuckles}" ,
+										"WER IS DA QUEEN ? ${knuckles}",
+		       								"THERE IS DA QUEEN !\n${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}${lolidragon}"];
 			var result = Math.floor((Math.random() * sayings.length) + 0);
 			message.channel.sendMessage(sayings[result], true);
     }
@@ -113,10 +113,10 @@ bot.on('message', message => {
 	var lolidragon = bot.emojis.get("433289550375419904");
 	var dab = bot.emojis.get("432915228947120129");
 	var parrot = bot.emojis.get("432970357536718858.")
-           var sayings = [`LE ${dab} NÉ PA MOR !`,
-										`J'EFFECTUE LE ${dab} !`,
-										`J'APPRÉCIE DABBER ${dab} !`,
-		       								`JE FAIS UN ${dab} DU NEZ !`];
+           var sayings = ["LE ${dab} NÉ PA MOR !",
+										"J'EFFECTUE LE ${dab} !",
+										"J'APPRÉCIE DABBER ${dab} !",
+		       								"JE FAIS UN ${dab} DU NEZ !"];
 			var result = Math.floor((Math.random() * sayings.length) + 0);
 			message.channel.sendMessage(sayings[result], true);
     }
