@@ -97,7 +97,7 @@ bot.on('message', message => {
            var sayings = ["FOLLOW ME MA BRUDDAH I KNOW DA WAE !\n ${knuckles}${knuckles}${knuckles}",
 										"COME ON MY BRUDAH WE WILL MAKE AN ARMY !\n ${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}",
 										"DO YOU KNOW DA WAE ! ${knuckles}",
-		       								"WER IS DA WAE ? ${knuckles}" ,
+		       								"WER IS DA WAE ? ${knuckles}",
 										"WER IS DA QUEEN ? ${knuckles}",
 		       								"THERE IS DA QUEEN !\n${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}${lolidragon}"];
 			var result = Math.floor((Math.random() * sayings.length) + 0);
@@ -178,6 +178,16 @@ bot.on('message', message => {
 		      								"Tu rigole au pif?",
 										"Attention, vous allez recevoir 100 exemplaires de ***l'humour pour les nuls***",
 										"Juste c'est pas drôle en vrai"];
+
+			var result = Math.floor((Math.random() * sayings.length) + 0);
+			message.channel.sendMessage(sayings[result]);
+    }
+	
+	
+    if (message.content.includes("tu es moche") || message.content.includes("t'es moche") || message.content.includes("Tu es moche")) {
+    	var sayings = ["Nan méo",
+										"PARDON !? T'AS VU TA GUEULE CONNASSE !?",
+										"Pas de ouf mdr"];
 
 			var result = Math.floor((Math.random() * sayings.length) + 0);
 			message.channel.sendMessage(sayings[result]);
