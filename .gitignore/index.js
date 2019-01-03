@@ -519,9 +519,15 @@ if (message.attachments.size > 0) {
 const filter = (reaction, user) => reaction.emoji.id === '530170738599133204' && user.id === 'someID'
         message.react(bot.emojis.get("530170778663125022"));
 	message.react(bot.emojis.get("530170738599133204"));
-	message.awaitReactions(filter, { time: 1500 })
-  .then(collected => message.channel.send(`Collected ${collected.size} reactions`))
+	message.awaitReactions(filter, { time: 5000 })
+
+  .then(collected => console.log(`Collected ${collected.size} reactions`))
   .catch(console.error);
+  if(message.awaitReactions.collected.size > bot.guild.guild.memberCount.filter(member => !member.user.bot).size / 3) { 
+message.pin(message.id);
+
+
+  }
 }
 });
 
