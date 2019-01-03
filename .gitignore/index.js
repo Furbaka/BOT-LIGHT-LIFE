@@ -513,7 +513,7 @@ if (message.content.startsWith(prefix + "annonce")){
 		return;}	
 	    
 	message.react('🤔')
-	
+    }
 });
 
 bot.on('messageReactionAdd', (reaction, user) => {
