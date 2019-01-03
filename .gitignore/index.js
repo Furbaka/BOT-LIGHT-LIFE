@@ -8,6 +8,7 @@ var prefix = ("*");
 bot.on('ready', () => {
 	bot.user.setActivity(bot.guilds.size + 50 + ' servers', { type: 'WATCHING' });
 	bot.user.setUsername("⚡Rainbow+");
+	
 });
 
 
@@ -15,6 +16,8 @@ bot.on('ready', () => {
 const knuckles = bot.emojis.get("432968588383748116");
 const lolidragon = bot.emojis.get("433289550375419904");
 const dab = bot.emojis.get("432915228947120129");
+
+const guild = bot.guilds.get(bot.guilds.id);
 
 
 bot.login(process.env.TOKEN);
@@ -523,7 +526,7 @@ const filter = (reaction, user) => reaction.emoji.id === '530170738599133204' &&
 
   .then(collected => console.log(`Collected ${collected.size} reactions`))
   .catch(console.error);
-  if(message.awaitReactions.collected > bot.guild.memberCount.filter(member => !member.user.bot).size / 3) { 
+  if(message.awaitReactions.collected > guild.members.filter(member => !member.user.bot).size / 3) { 
 message.pin(message.id);
 
 
