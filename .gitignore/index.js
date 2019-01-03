@@ -477,7 +477,8 @@ const filter = (reaction, user) => reaction.emoji.id === '530170738599133204' &&
 	console.log(`Collected ${collected.size} reactions`)
 		if(collected.size > message.guild.memberCount / 2.1) {
 message.pin(message.id);
-}})
+}
+	})
   .catch(console.error);
 	
 }
