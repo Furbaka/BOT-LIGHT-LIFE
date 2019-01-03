@@ -507,6 +507,13 @@ if (message.content.startsWith(prefix + "annonce")){
 		
 	}
 	
+    if (message.attachments.size => 0) {
+	
+	if (message.channel.nsfw === false) {
+		return;}	
+	    
+	message.react('🤔')
+	
 });
 
 bot.on('messageReactionAdd', (reaction, user) => {
