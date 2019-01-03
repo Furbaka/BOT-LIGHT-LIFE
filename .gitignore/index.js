@@ -523,7 +523,7 @@ const filter = (reaction, user) => reaction.emoji.id === '530170738599133204' &&
 
   .then(collected => console.log(`Collected ${collected.size} reactions`))
   .catch(console.error);
-  if(message.awaitReactions.collected > bot.guild.guild.memberCount.filter(member => !member.user.bot).size / 3) { 
+  if(message.awaitReactions.collected > bot.guild.memberCount.filter(member => !member.user.bot).size / 3) { 
 message.pin(message.id);
 
 
