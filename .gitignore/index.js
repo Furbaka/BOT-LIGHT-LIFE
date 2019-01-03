@@ -15,6 +15,7 @@ const knuckles = bot.emojis.get("432968588383748116");
 const lolidragon = bot.emojis.get("433289550375419904");
 const dab = bot.emojis.get("432915228947120129");
 
+
 bot.login(process.env.TOKEN);
 
 bot.on('message', message => {
@@ -283,7 +284,9 @@ bot.on('message', message => {
     if (msg.startsWith(prefix + "MULTI")) {
 	
 	
-	var multi = bot.emojis.get("434047602602803200");
+	
+	    var multi = bot.emojis.get("434047602602803200");
+	    var multi = bot.emojis.get("434047602602803200");
 	    
 	message.delete();
 	    
@@ -510,10 +513,14 @@ if (message.attachments.size > 0) {
 	
 	if (message.channel.nsfw === false) {
 		return;}
-	message.react('530202011824553984');
-        message.react('530202190929854475');
+	var nope = bot.emojis.get("530202011824553984");
+	var yep = bot.emojis.get("530202190929854475");
+	message.react(nope);
+        message.react(yep);
     }
-
+if (message.reactions.count > guild.memberCount / 2){
+	message.pin(message.id);
+}
 });
 
 bot.on('messageReactionAdd', (reaction, user) => {
