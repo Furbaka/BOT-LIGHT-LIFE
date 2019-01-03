@@ -507,7 +507,7 @@ if (message.content.startsWith(prefix + "annonce")){
 		
 	}
 	
-    if (message.attachments) {
+    if (message.attachments.client) {
 	
 	if (message.channel.nsfw === false) {
 		return;}	
