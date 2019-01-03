@@ -507,12 +507,12 @@ if (message.content.startsWith(prefix + "annonce")){
 		
 	}
 	
-    if (message.attachments.size => 0) {
+    if (message.attachments) {
 	
 	if (message.channel.nsfw === false) {
 		return;}	
 	    
-	message.react('🤔')
+	message.react('🤔');
     }
 });
 
