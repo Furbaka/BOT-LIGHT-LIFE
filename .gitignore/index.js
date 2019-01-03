@@ -513,10 +513,8 @@ if (message.attachments.size > 0) {
 	
 	if (message.channel.nsfw === false) {
 		return;}
-	var nope = bot.emojis.get("530202011824553984");
-	var yep = bot.emojis.get("530202190929854475");
-        message.react(bot.emojis.get("530202011824553984"));
-	message.react(bot.emojis.get("530202190929854475"));
+        message.react(bot.emojis.get("530170778663125022"));
+	message.react(bot.emojis.get("530170738599133204"));
     }
 if (message.reactions.count > bot.guild.memberCount / 2.5){ 
 	message.pin(message.id);
