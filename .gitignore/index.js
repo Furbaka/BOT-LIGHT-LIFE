@@ -517,7 +517,7 @@ if (message.attachments.size > 0) {
         message.react(bot.emojis.get("530170778663125022"));
 	message.react(bot.emojis.get("530170738599133204"));
     }
-if (message.reactions.count > (bot.guilds.memberCount / 2 ) + 1 - bot.guilds.member.user.bot.size){ 
+if (message.reactions.count > (bot.guilds.memberCount / 2 ) + 1 - bot.guilds.memberCount.bot){ 
 	message.pin(message.id);
 }
 });
