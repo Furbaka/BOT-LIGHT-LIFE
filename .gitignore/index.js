@@ -523,7 +523,6 @@ const filter = (reaction, user) => reaction.emoji.id === '530170738599133204' &&
   .then(collected => message.channel.send(`Collected ${collected.size} reactions`))
   .catch(console.error);
 }
-    }
 });
 
 bot.on('messageReactionAdd', (reaction, user) => {
