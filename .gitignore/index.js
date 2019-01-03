@@ -472,11 +472,14 @@ const filter = (reaction, user) => reaction.emoji.id === '530170738599133204' &&
 	message.react(bot.emojis.get("530170738599133204"));
 	message.awaitReactions(filter, { time: 5000 })
 
-  .then(collected => console.log(`Collected ${collected.size} reactions`))
-  .catch(console.error);
-	if(message.awaitReactions.collected.size > message.guild.memberCount / 2.1) {
+  .then(collected => {
+	const reaction = collected.first();
+	console.log(`Collected ${collected.size} reactions`)
+		if(collected.size > message.guild.memberCount / 2.1) {
 message.pin(message.id);
-	}
+}})
+  .catch(console.error);
+	
 }
 });
 
