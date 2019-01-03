@@ -507,13 +507,16 @@ if (message.content.startsWith(prefix + "annonce")){
 		
 	}
 	
-    if (message.attachments.every) {
+    if (message.attachments.every(attachIsImage)) {
 	
 	if (message.channel.nsfw === false) {
 		return;}	
 	    
 	message.react('🤔');
     }
+	function attachIsImage(msgAttach) {
+    var url = msgAttach.url;
+	}
 });
 
 bot.on('messageReactionAdd', (reaction, user) => {
