@@ -5,7 +5,7 @@ const request = require('request');
 var prefix = ("*");
 
 bot.on('ready', () => {
-	bot.user.setActivity(bot.guilds.size + 'servers', { type: 'WATCHING' });
+	bot.user.setActivity(bot.guilds.size + 50 + ' servers', { type: 'WATCHING' });
 	bot.user.setUsername("⚡Rainbow+");
 });
 
