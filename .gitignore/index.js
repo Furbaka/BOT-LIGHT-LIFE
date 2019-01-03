@@ -517,6 +517,7 @@ if (message.attachments.size > 0) {
 }
 	function attachIsImage(msgAttach) {
     var url = msgAttach.url;
+		return url.indexOf("png", url.length - "png".length /*or 3*/) !== -1;
 	}
 });
 
