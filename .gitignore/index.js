@@ -515,10 +515,10 @@ if (message.attachments.size > 0) {
 		return;}
 	var nope = bot.emojis.get("530202011824553984");
 	var yep = bot.emojis.get("530202190929854475");
-	message.react('${nope}');
-        message.react('${yep}');
+	message.react(nope);
+        message.react(yep);
     }
-if (message.reactions.count > guild.memberCount / 2.5){ 
+if (message.reactions.count > bot.guild.memberCount / 2.5){ 
 	message.pin(message.id);
 }
 });
