@@ -507,18 +507,13 @@ if (message.content.startsWith(prefix + "annonce")){
 		
 	}
 if (message.attachments.size > 0) {
-    if (message.attachments.every(attachIsImage)){
 	
 	if (message.channel.nsfw === false) {
 		return;}	
 	    
 	message.react('🤔');
     }
-}
-	function attachIsImage(msgAttach) {
-    var url = msgAttach.url;
-		return url.indexOf("png", url.length - "png".length /*or 3*/) !== -1;
-	}
+
 });
 
 bot.on('messageReactionAdd', (reaction, user) => {
