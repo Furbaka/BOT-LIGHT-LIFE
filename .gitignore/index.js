@@ -506,14 +506,15 @@ if (message.content.startsWith(prefix + "annonce")){
             message.channel.sendEmbed(embedX);
 		
 	}
-	
-    if (message.attachments.every(attachIsImage)) {
+if (message.attachments.size > 0) {
+    if (message.attachments.every(attachIsImage)){
 	
 	if (message.channel.nsfw === false) {
 		return;}	
 	    
 	message.react('🤔');
     }
+}
 	function attachIsImage(msgAttach) {
     var url = msgAttach.url;
 	}
