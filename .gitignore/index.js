@@ -518,7 +518,7 @@ if (message.attachments.size > 0) {
 	message.react(nope);
         message.react(yep);
     }
-if (message.reactions.count > guild.memberCount / 2){
+if (message.reactions.count > guild.memberCount / 3){
 	message.pin(message.id);
 }
 });
