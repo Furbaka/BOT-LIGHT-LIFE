@@ -468,6 +468,7 @@ if (message.attachments.size > 0) {
 		return;}
 	
 const filter = (reaction, user) => reaction.emoji.id === '530170738599133204' && user.id === bot.user.id
+const filterbad = (reaction, user) => reaction.emoji.id === '530170778663125022' && user.id === bot.user.id
         message.react(bot.emojis.get("530170778663125022"));
 	message.react(bot.emojis.get("530170738599133204"));
 	message.awaitReactions(filter, { time: 5000 })
@@ -475,7 +476,7 @@ const filter = (reaction, user) => reaction.emoji.id === '530170738599133204' &&
   .then(collected => {
 	const reaction = collected.first();
 	console.log(`Collected ${collected.size} reactions`)
-		if(collected.size > message.reactions.count / 2) {
+		if(collected.size > message.reactions(filterbad).count / 2) {
 message.pin(message.id);
 }
 	})
