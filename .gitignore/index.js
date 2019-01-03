@@ -188,6 +188,23 @@ bot.on('message', message => {
 			message.channel.sendMessage(sayings[result]);
     }
 	
+    if (message.content.includes("num") || message.content.includes("NUM")) {
+    	var sayings = ["num",
+										"num num~",
+										"num num num <3",
+		       								"num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num num",
+										"NUM~ ! <3",
+		      								"num~ ! <3",
+		      								"num~",
+		      								"num <3",
+		      								"num num <3",
+		      								"num ! <3",
+		      								"num !"];
+
+			var result = Math.floor((Math.random() * sayings.length) + 0);
+			message.author.sendMessage(sayings[result]);
+    }
+	
 	
     if (message.content.includes("tu es moche") || message.content.includes("t'es moche") || message.content.includes("Tu es moche")) {
     	var sayings = ["Nan méo",
