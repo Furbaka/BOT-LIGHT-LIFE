@@ -467,10 +467,10 @@ if (message.attachments.size > 0) {
 	if (message.channel.nsfw === false) {
 		return;}
 	
-const filtermoji = (reaction, user) => reaction.emoji.id === '530170738599133204' && user.id === message.reactions.user.id;
+const filter = (reaction, user) => reaction.emoji.id === '530170738599133204' && user.id === 'someID'
         message.react(bot.emojis.get("530170778663125022"));
 	message.react(bot.emojis.get("530170738599133204"));
-	message.awaitReactions(filtermoji, { time: 5000 })
+	message.awaitReactions(filter, { time: 5000 })
 
   .then(collected => {
 	const reaction = collected.first();
