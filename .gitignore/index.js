@@ -510,8 +510,8 @@ if (message.attachments.size > 0) {
 	
 	if (message.channel.nsfw === false) {
 		return;}
-	message.react(bot.emojis.get("530202011824553984"));
-        message.react(bot.emojis.get("530202190929854475"));
+	message.react('530202011824553984');
+        message.react('530202190929854475');
     }
 
 });
