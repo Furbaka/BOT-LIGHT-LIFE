@@ -515,8 +515,8 @@ if (message.attachments.size > 0) {
 		return;}
 	var nope = bot.emojis.get("530202011824553984");
 	var yep = bot.emojis.get("530202190929854475");
-	message.react(nope);
-        message.react(yep);
+        message.react(bot.emojis.get("530202011824553984"));
+	message.react(bot.emojis.get("530202190929854475"));
     }
 if (message.reactions.count > bot.guild.memberCount / 2.5){ 
 	message.pin(message.id);
