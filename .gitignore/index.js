@@ -476,7 +476,7 @@ const filterbad = (reaction, user) => reaction.emoji.id === '530170778663125022'
   .then(collected => {
 	const reaction = collected.first();
 	console.log(`Collected ${collected.size} reactions`)
-		if(collected.size > message.reactions(filterbad).count / 2) {
+		if(collected.size >= message.reactions.count / 2) {
 message.pin(message.id);
 }
 	})
