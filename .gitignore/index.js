@@ -510,8 +510,8 @@ if (message.attachments.size > 0) {
 	
 	if (message.channel.nsfw === false) {
 		return;}	
-var nope = bot.emojis.get("530202011824553984");
-var yep = bot.emojis.get("530202190929854475");
+const nope = bot.emojis.get("530202011824553984");
+const yep = bot.emojis.get("530202190929854475");
 	message.react(${nope});
         message.react(${yep});
     }
@@ -520,7 +520,7 @@ var yep = bot.emojis.get("530202190929854475");
 
 bot.on('messageReactionAdd', (reaction, user) => {
 	
-var multi = bot.emojis.get("434047602602803200");
+const multi = bot.emojis.get("434047602602803200");
 	
     if(reaction.emoji.identifier === "434047602602803200") {
 	var author = reaction.message.mentions.members.first();
