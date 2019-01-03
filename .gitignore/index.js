@@ -327,59 +327,7 @@ bot.on('message', message => {
 		message.react(bot.emojis.get("433316429044121601"));
 	}
 	}
-	if (message.content.includes("<@178994276951261184>")) {
-    	var sayings = ["jui mort X)",
-										"Ferarpasser c ouf",
-										"abonné vou",
-		       								"C'est pas ouf en faites, mé aboné vou il ren",
-										"Ahah",
-		       								"OMG Y'a FERAL SUR LE SERV ?! 0O0"];
 
-			var result = Math.floor((Math.random() * sayings.length) + 0);
-			message.channel.sendMessage(sayings[result]);
-    }
-	if (message.content.includes("pas de ouf")) {
-    	var sayings52 = ["LyymuxX c'est toi !?",
-										"MEC JSUIS UN ABONEY !",
-										"JTM TRO PEPITO ! euh... Panini",
-		       								"Pem!"];
-
-			var result = Math.floor((Math.random() * sayings52.length) + 0);
-			message.channel.sendMessage(sayings52[result]);
-    }
-	if (message.content.includes("pem")) {
-    	var sayings52 = ["PEM!",
-										"pem!",
-										"peeeeeeeeeeeeeeem!",
-		       								"Pam!"];
-
-			var result = Math.floor((Math.random() * sayings52.length) + 0);
-			message.channel.sendMessage(sayings52[result]);
-    }
-	
-    if (message.content.startsWith(prefix + "supersondage")) {
-	
-	if (!message.member.hasPermission("MANAGE_MESSAGES")) {
-                return;
-	}
-            
-	message.delete();
-	    
-        let args = message.content.split(" ").slice(1);
-        let thingToEcho = args.join(" ");
-        var embed = new Discord.RichEmbed()
-            .setTitle("SUPER SONDAGE")
-	    .setDescription("Question de " + message.author + " pour @everyone")
-	    .setThumbnail("https://qph.fs.quoracdn.net/main-qimg-49b8b38b8301a67c52f18ab79d927827.webp")
-            .addField(thingToEcho + " ", "Répondre avec :white_check_mark: ou :x:\n ", false)
-            .setColor("0xB40404")
-            .setTimestamp();
-        message.channel.sendEmbed(embed)
-        .then(function (message) {
-        message.react("✅");
-        message.react("❌");
-     });
-     }
 	
     if (message.content === prefix + "aide nsfw"){
 	if (message.channel.nsfw === false) {
@@ -526,17 +474,15 @@ const filter = (reaction, user) => reaction.emoji.id === '530170738599133204' &&
 
   .then(collected => console.log(`Collected ${collected.size} reactions`))
   .catch(console.error);
-  if(collected.size > bot.guild.memberCount / 3) { 
+	if(message.awaitReactions.collected.size > message.guild.memberCount / 2.1) {
 message.pin(message.id);
-
-
-  }
+	}
 }
 });
 
 bot.on('messageReactionAdd', (reaction, user) => {
 	
-const multi = bot.emojis.get("434047602602803200");
+var multi = bot.emojis.get("434047602602803200");
 	
     if(reaction.emoji.identifier === "434047602602803200") {
 	var author = reaction.message.mentions.members.first();
