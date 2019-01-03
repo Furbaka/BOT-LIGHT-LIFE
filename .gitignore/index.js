@@ -512,14 +512,18 @@ if (message.content.startsWith(prefix + "annonce")){
 	}
 if (message.attachments.size > 0) {
 	
+	
 	if (message.channel.nsfw === false) {
 		return;}
+	
+const filter = (reaction, user) => reaction.emoji.id === '530170738599133204' && user.id === 'someID'
         message.react(bot.emojis.get("530170778663125022"));
 	message.react(bot.emojis.get("530170738599133204"));
-    }
-if (message.reactions.count > (bot.guilds.memberCount / 2 ) + 1 - bot.guild.members.filter(member => !member.user.bot).size){ 
-	message.pin(message.id);
+	message.awaitReactions(filter, { time: 1500 })
+  .then(collected => message.channel.send(`Collected ${collected.size} reactions`))
+  .catch(console.error);
 }
+    }
 });
 
 bot.on('messageReactionAdd', (reaction, user) => {
