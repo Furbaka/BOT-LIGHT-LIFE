@@ -504,19 +504,17 @@ message.pin(reaction.message);
 	
 }
 if (msg.startsWith(prefix + "play")) {
-	
+
+	let args = message.content.split(" ").slice(1);
+	let thingToEcho = args.join(" ");
 bot.voiceChannel.join()
   .then(connection => {
-		message.delete();
-	    
-        let args = message.content.split(" ").slice(1);
-        let thingToEcho = args.join(" ");
-    const stream = ytdl(thingToEcho, { filter : 'audioonly' });
+    const stream = ytdl('https://www.youtube.com/watch?v=XAWgeLF9EVQ', { filter : 'audioonly' });
     broadcast.playStream(stream);
     const dispatcher = connection.playBroadcast(broadcast);
   })
   .catch(console.error);
-     }
+}
 });
 
 bot.on('messageReactionAdd', (reaction, user) => {
