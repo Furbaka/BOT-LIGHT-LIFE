@@ -4,7 +4,7 @@ const request = require('request');
 
 
 
-var prefix = ("*");
+var prefix = "*";
 
 bot.on('ready', () => {
 	bot.user.setActivity(bot.guilds.size + 50 + ' servers', { type: 'WATCHING' });
@@ -31,21 +31,8 @@ bot.on('message', message => {
     let sender = message.author;
     let cont = message.content.slice(prefix.length).split(" ");
     let args = cont.slice(1);
-	
 
-    
-	
-	if (message.content.startsWith(prefix + "fnbr shop")) {
-	message.delete();
-		var embedX = new Discord.RichEmbed()
-	    .setImage("http://orcz.com/images/c/cc/FortniteBattleRoyaleItemShopScreen.jpg")
-            .setColor("0xF4D14F")
-	    .setFooter("pour " + message.author.username , message.author.avatarURL)
-    
-            message.channel.sendEmbed(embedX);
-		
-	}
-	
+//SONDAGE
     if (message.content.startsWith(prefix + "sondage")) {
 	    
 	message.delete();
@@ -66,12 +53,12 @@ bot.on('message', message => {
      });
      }
 
-	
+//RIGOLO
     if (message.content === prefix + "rigolo"){
         message.channel.sendMessage("TU ES MOCHE !");
         console.log("Commande effectué");
     }
-
+//SERV INFO
     if (message.content === prefix + "info"){
         var embed = new Discord.RichEmbed()
 		.setThumbnail(message.guild.iconURL)
@@ -85,35 +72,31 @@ bot.on('message', message => {
     
 
     }
-
+//AVATAR
     if (message.content == prefix + "avatar") {
      // Send the user's avatar URL
         message.channel.send(message.author.avatarURL);
     }
-        
+//TROP DROLE
     if (message.content === prefix + "troprigolo"){
         message.channel.sendMessage("JE T'AIME PAS !");
         console.log("Commande effectué");
     }
-    
+//WAE
     if (message.content.includes(" WAE") || message.content.includes(" wae")){
 	var knuckles = bot.emojis.get("432968588383748116");
 	var lolidragon = bot.emojis.get("433289550375419904");
 	var dab = bot.emojis.get("432915228947120129");
-           var sayings = ["FOLLOW ME MA BRUDDAH I KNOW DA WAE !\n ${knuckles}${knuckles}${knuckles}",
-										"COME ON MY BRUDAH WE WILL MAKE AN ARMY !\n ${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}",
-										"DO YOU KNOW DA WAE ! ${knuckles}",
-		       								"WER IS DA WAE ? ${knuckles}",
-										"WER IS DA QUEEN ? ${knuckles}",
-		       								"THERE IS DA QUEEN !\n${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}${lolidragon}"];
+           var sayings = [`FOLLOW ME MA BRUDDAH I KNOW DA WAE !\n ${knuckles}${knuckles}${knuckles}`,
+		   `COME ON MY BRUDAH WE WILL MAKE AN ARMY !\n ${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}`,
+		   `DO YOU KNOW DA WAE ! ${knuckles}`,
+		   `WER IS DA WAE ? ${knuckles}`,
+		   `WER IS DA QUEEN ? ${knuckles}`,
+		   `THERE IS DA QUEEN !\n${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}${knuckles}${lolidragon}`];
 			var result = Math.floor((Math.random() * sayings.length) + 0);
 			message.channel.sendMessage(sayings[result], true);
     }
-
-    if (message.content.includes(" PATES") || message.content.includes(" BURGER") || message.content.includes(" PIZZA") || message.content.includes(" PÂTES") || message.content.includes(" pates") || message.content.includes(" burger") || message.content.includes(" pizza") || message.content.includes(" pâtes")) {
-        message.reply("Arrête de parler de bouffe j'ai faim :/");
-    }
-    
+//DAB
     if (message.content.includes(" DAB") || message.content.includes(" dab")){
 	var knuckles = bot.emojis.get("432968588383748116");
 	var lolidragon = bot.emojis.get("433289550375419904");
@@ -125,18 +108,8 @@ bot.on('message', message => {
 		       								"JE FAIS UN ${dab} DU NEZ !"];
 			var result = Math.floor((Math.random() * sayings.length) + 0);
 			message.channel.sendMessage(sayings[result], true);
-    }
-    if (message.content == "BOT" || message.content == "bot"){
-        message.channel.sendMessage("Donc... je suis pas un vrai petit garcon ? :/");
-    }
-    
-    if (message.content.includes(" HEURE") || message.content.includes(" heure")) {
-	   message.channel.sendMessage("L'HEURE DE T'ACHETER UNE MONTRE !");
-    }
-    if (message.content.includes("WOW") || message.content.includes("WAW") || message.content.includes("wow") || message.content.includes("waw")){
-        message.reply("T'as vu, c'est dingue !");
-    }
-
+}
+//CREEPY
     if (message.content == prefix + "creepy") {
     	var sayings = ["Mon père m'a souvent mis en garde contre les sosies avant de mourir. Je l'ai vu traverser la rue avec moi.",
 										"Mon père est tombé dans le puits. Je n'étais pas inquiet jusqu'à ce que j'entende des craquements d'os au fond.",
@@ -155,40 +128,7 @@ bot.on('message', message => {
 			message.channel.sendMessage("```fix\n" + sayings[result]+ "\n```");
     }
 	
-    if (message.content == "!%!DevCommu"){
-        message.guild.channels.find("name", "📰partenariats📰").sendMessage("Bonjour bonsoir @everyone, comment allez vous ? Aujourd'hui j'ai l'immense plaisir de vous présenter le serveur de <@397364192908410880>, un serveur communautaire nommé CodeCommunity_ Celui ci comporte la communauté de la TEAM de développement web, @CodeGroup. En effet, CodeGroup est une équipe de développeurs web, réalisant des projets et apprenant ensemble. Celle-ci comporte plus de 10 membres et recrute d'avantage. Si tu es intéressé par cette fameuse TEAM de développement, je t'invite donc à lire l'annonce pixelsads situé dans le serveur communautaire. Voila, j'ai tout dis :v:\nhttps://discord.gg/m8UvDDE");
-    }
-   
-    if (message.content == "!%!LightLife"){
-        message.channel.sendMessage("__***👾 L↓GHT L↑FE 👾***__ **Recrutement :x:**\n🗺️ CLIQUEZ SUR CE LIEN INCROYABLE POUR COMMENCER L'AVENTURE https://discord.gg/apjU2vb 🗺️\n\n__L↓GHT L↑FE vous de permet de :__\n\n```htm\n📌Rencontrez vos futurs amis et vos futurs rivaux ! | 😄💬 ⇝ 🎭🎭�\n📌Discuter avec plein de gens (pis voir du hentai) ! | 😄💬 ⇝ 😄💬\n📌Jouer sur des jeux avec d'autres joueurs ! | 🎮 ⇝ 🎮⚔️️🎮\n📌Avoir un grade STAR si vous êtes STREAMER/VIDEASTE ! | 📹‍ ⇝ ‍‍‍‍👯‍😎👯‍\n```\n\n🤜 Sur L↓GHT L↑FE vous êtes (PRESQUE) libre de faire votre pub ! | 📰 ⇝ 🤑\n\n👉 ***En plus on a un bot perso qui est très rigolo !*** | 🤖💬 ⇝ 🤣\n\n🔗 CLIQUEZ SUR CE LIEN POUR REJOINDRE LE SERVEUR https://discord.gg/apjU2vb 🔗\n\n\nServeur de <@328514801124900866>\n@everyone");
-    }
-
-    if (message.content === prefix + "invite"){
-        var embed3 = new Discord.RichEmbed()
-		.setThumbnail(bot.user.avatarURL)
-		.setTitle("INVITE")
-		.setDescription("AJOUTER LE BOT A VOTRE SERVEUR !")
-		.addField("Lien", "[Ajoute moi !](https://lightlifefr.wix.com/rainbow)", true)
-		.setColor("0xF4D14F")
-		.setFooter("BOT CRÉÉ PAR MISTIGRIX")
-        message.sendEmbed(embed3);
-    }
-
-    if (message.content.includes("xD") || message.content.includes("lol") || message.content.includes("mdr")) {
-    	var sayings = ["jui mort X)",
-										"ptdr",
-										"C'est pas drôle",
-		       								"C'est pas ouf en faites, jcp pourquoi tu trouve ca drôle",
-										"Ahah",
-		       								"jui mort x)",
-		      								"Tu rigole au pif?",
-										"Attention, vous allez recevoir 100 exemplaires de ***l'humour pour les nuls***",
-										"Juste c'est pas drôle en vrai"];
-
-			var result = Math.floor((Math.random() * sayings.length) + 0);
-			message.channel.sendMessage(sayings[result]);
-    }
-	
+//NUM NUM TEXT
     if (message.content.includes("num") || message.content.includes("NUM")) {
     	var sayings = ["num",
 										"num num~",
@@ -205,17 +145,7 @@ bot.on('message', message => {
 			var result = Math.floor((Math.random() * sayings.length) + 0);
 			message.author.sendMessage(sayings[result]);
     }
-	
-	
-    if (message.content.includes("tu es moche") || message.content.includes("t'es moche") || message.content.includes("Tu es moche")) {
-    	var sayings = ["Nan méo",
-										"PARDON !? T'AS VU TA GUEULE CONNASSE !?",
-										"Pas de ouf mdr"];
-
-			var result = Math.floor((Math.random() * sayings.length) + 0);
-			message.channel.sendMessage(sayings[result]);
-    }
-	
+//BLAGUE
     if (message.content == prefix + "blague") {
 	    
 	message.delete();
@@ -247,7 +177,7 @@ bot.on('message', message => {
     
             message.channel.sendEmbed(embedX);
     }
-	
+//SUPPR
     if (msg.startsWith(prefix + 'SUPPR')) {
 
         async function purge() {
@@ -274,7 +204,7 @@ bot.on('message', message => {
         purge();
 
     }
-    
+//AIDE
     if (message.content === prefix + "aide"){
         var embed2 = new Discord.RichEmbed()
 		.setThumbnail("http://i.imgur.com/9eIhQvf.gif")
@@ -289,20 +219,8 @@ bot.on('message', message => {
         message.channel.sendEmbed(embed2);
     }
     
-    
-    if (message.content === prefix + "news"){
-        var embed4 = new Discord.RichEmbed()
-		.setThumbnail("http://i.imgur.com/9eIhQvf.gif")
-		.setTitle("VOICI MES NOUVEAUTÉES !")
-		.setDescription("\n")
-		.addField("AJOUTS", "📌Ajout de la commandes : \`*aide nsfw\` Pour voir des trucs cochons (**seulement dans un channel nsfw**)\nAvec en prime des commandes cochones à découvrir avec celle-ci ! :D")
-		.addField("PATCH", "🌀 Des fois je crashais (encore +) 🌀")
-		.setColor("0xF4D14F")
-		.setFooter("Version 1.5")
-        message.channel.sendEmbed(embed4);
-    }	
-	
-	
+
+//RECHERCHE JOUEURS
     if (msg.startsWith(prefix + "MULTI")) {
 	
 	
@@ -325,7 +243,9 @@ bot.on('message', message => {
         .then(function (message) {
         message.react(multi);
      });
-     }
+	 }
+	 
+//CHAT
 
    //  if (msg.startsWith(prefix + "CHAT")) {
               //message.delete();
@@ -339,14 +259,15 @@ bot.on('message', message => {
         //            var file = JSON.parse(body);
           //          message.channel.sendFile(file.file);
       //        });
-    // }
+	// }
+	
+//BADWORDS
 	if (message.content.includes("TG") || message.content.includes("FTG") || message.content.includes("NTM") || message.content.includes("FDP") || message.content.includes("PUTE") || message.content.includes("SALOPE") || message.content.includes("CONNARD") || message.content.includes("SALOP") || message.content.includes("PUTAIN") || message.content.includes("TA GUEULE") || message.content.includes("BITE") || message.content.includes("CUL") || message.content.includes("tg") || message.content.includes("ftg") || message.content.includes("ntm") || message.content.includes("fdp") || message.content.includes("pute") || message.content.includes("salope") || message.content.includes("connard") || message.content.includes("salop") || message.content.includes("putain") || message.content.includes("ta gueule") || message.content.includes("bite") || message.content.includes("cul")){
         	if (message.channel.nsfw === false) {
 		message.react(bot.emojis.get("433316429044121601"));
 	}
 	}
-
-	
+//AIDE NSFW
     if (message.content === prefix + "aide nsfw"){
 	if (message.channel.nsfw === false) {
 	return;}
@@ -359,24 +280,9 @@ bot.on('message', message => {
 		.setColor("cc55ee")
         message.channel.sendEmbed(embed6);
     }
+
 	
-if (message.content.startsWith(prefix + "annonce")){
-	 
-	let args = message.content.split(" ").slice(1);
-        let thingToEcho = args.join(" ");
-	 
-	if (!message.member.hasPermission("MANAGE_MESSAGES")) {
-                return;
-	}
-	 
-        var embed2 = new Discord.RichEmbed()
-		.setThumbnail("https://image.noelshack.com/fichiers/2018/16/6/1524330497-annonce.png")
-		.setTitle(thingToEcho)
-		.setDescription("@everyone")
-		.setTimestamp()
-		.setColor("cc55ee")
-        message.channel.sendEmbed(embed2);
-    }
+//NSFW NEKO
 
     if (message.content == prefix + "nsfw neko") {
 	    
@@ -413,7 +319,11 @@ if (message.content.startsWith(prefix + "annonce")){
 	    .setFooter("pour " + message.author.username , message.author.avatarURL)
     
             message.channel.sendEmbed(embedX);
-    }
+	}
+	
+
+//GG
+
 
  	if (msg.startsWith("GG ")){
 		var nam = message.mentions.members.first();
@@ -438,6 +348,7 @@ if (message.content.startsWith(prefix + "annonce")){
        		message.channel.sendEmbed(embed);
 		}
     
+//GL 
 
     }
 
@@ -467,18 +378,8 @@ if (message.content.startsWith(prefix + "annonce")){
     }
 
 	
-	if (message.content.startsWith(prefix + "fnbr pass")) {
-	message.delete();
-		var embedX = new Discord.RichEmbed()
-	    .setTitle("FORTNITE | PASSE DE COMBAT")
-	    .setDescription("SAISON 4")
-	    .setImage("https://drive.google.com/file/d/1-J_txaZgXC0FckxmjjUcL9G6pTCSpDK_/view?usp=sharing")
-            .setColor("0xF4D14F")
-	    .setFooter("pour " + message.author.username , message.author.avatarURL)
-    
-            message.channel.sendEmbed(embedX);
-		
-	}
+//NSFW VOTE
+
 if (message.attachments.size > 0) {
 	
 	
@@ -499,7 +400,9 @@ message.pin(reaction.message);
 }
 	})
   .catch(console.error);
-	
+
+//MUSIC
+
 }
 if (msg.startsWith(prefix + "play")) {
 	const streamOptions = { seek: 0, volume: 1 };
@@ -516,6 +419,7 @@ message.author.voiceChannel.join()
 }
 });
 
+//JOUEURS
 bot.on('messageReactionAdd', (reaction, user) => {
 	
 var multi = bot.emojis.get("434047602602803200");
