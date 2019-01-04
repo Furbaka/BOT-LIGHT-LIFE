@@ -409,7 +409,7 @@ if (msg.startsWith(prefix + "play")) {
 const broadcast = client.createVoiceBroadcast();
 	let args = message.content.split(" ").slice(1);
 	let thingToEcho = args.join(" ");
-message.author.voiceChannel.join()
+voiceChannel.join()
   .then(connection => {
     const stream = ytdl(thingToEcho, { filter : 'audioonly' });
     broadcast.playStream(stream);
