@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const request = require('request');
 
+const Discord-commando = require('discord-commando.js');
+
 const ytdl = require('ytdl-core');
 const streamOptions = { seek: 0, volume: 1 };
 const broadcast = client.createVoiceBroadcast();
@@ -504,12 +506,11 @@ message.pin(reaction.message);
 	
 }
 if (msg.startsWith(prefix + "play")) {
-
 	let args = message.content.split(" ").slice(1);
 	let thingToEcho = args.join(" ");
-bot.voiceChannel.join()
+message.author.voiceChannel.join()
   .then(connection => {
-    const stream = ytdl('https://www.youtube.com/watch?v=XAWgeLF9EVQ', { filter : 'audioonly' });
+    const stream = ytdl.downloadFromInfo(thingToEcho, { filter : 'audioonly' });
     broadcast.playStream(stream);
     const dispatcher = connection.playBroadcast(broadcast);
   })
