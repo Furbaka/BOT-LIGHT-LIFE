@@ -2,6 +2,9 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const request = require('request');
 
+const ytdl = require('ytdl-core');
+const streamOptions = { seek: 0, volume: 1 };
+const broadcast = client.createVoiceBroadcast();
 
 var prefix = ("*");
 
@@ -500,6 +503,20 @@ message.pin(reaction.message);
   .catch(console.error);
 	
 }
+if (msg.startsWith(prefix + "play")) {
+	
+bot.voiceChannel.join()
+  .then(connection => {
+		message.delete();
+	    
+        let args = message.content.split(" ").slice(1);
+        let thingToEcho = args.join(" ");
+    const stream = ytdl(thingToEcho, { filter : 'audioonly' });
+    bot.broadcast.playStream(stream);
+    const dispatcher = connection.playBroadcast(broadcast);
+  })
+  .catch(console.error);
+     }
 });
 
 bot.on('messageReactionAdd', (reaction, user) => {
