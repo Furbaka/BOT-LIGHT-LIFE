@@ -419,7 +419,7 @@ bot.voiceChannel.join(message.author.voiceChannel)
 }
 	
 if (msg.startsWith(prefix + "google")) {
-bot.voiceChannel.join(message.author.voiceChannel)
+bot.voiceChannel.join(message.author.voiceChannel.id)
 }
 });
 
