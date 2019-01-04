@@ -2,13 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const request = require('request');
 
-const music = require('discord.js-music');
 
-
-const fs = require('fs');
-const ytdl = require('ytdl-core');
-const streamOptions = { seek: 0, volume: 1 };
-const broadcast = client.createVoiceBroadcast();
 
 var prefix = ("*");
 
@@ -508,6 +502,8 @@ message.pin(reaction.message);
 	
 }
 if (msg.startsWith(prefix + "play")) {
+	const streamOptions = { seek: 0, volume: 1 };
+const broadcast = client.createVoiceBroadcast();
 	let args = message.content.split(" ").slice(1);
 	let thingToEcho = args.join(" ");
 message.author.voiceChannel.join()
