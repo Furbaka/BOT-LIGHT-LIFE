@@ -7,6 +7,14 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.3.2",
+    "node-opus": "^0.2.7",
+    "prompt": "^1.0.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "strip-indent": "^2.0.0",
+    "util": "^0.10.3",
+    "youtube-search": "^1.0.10",
+    "ytdl-core": "^0.18.0"
     "request": "^2.85.0"
   }
 }
