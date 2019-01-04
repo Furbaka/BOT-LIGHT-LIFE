@@ -508,7 +508,7 @@ const broadcast = client.createVoiceBroadcast();
 	let thingToEcho = args.join(" ");
 message.author.voiceChannel.join()
   .then(connection => {
-    const stream = ytdl.downloadFromInfo(thingToEcho, { filter : 'audioonly' });
+    const stream = ytdl(thingToEcho, { filter : 'audioonly' });
     broadcast.playStream(stream);
     const dispatcher = connection.playBroadcast(broadcast);
   })
