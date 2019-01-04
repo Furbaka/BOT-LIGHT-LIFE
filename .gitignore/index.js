@@ -512,7 +512,7 @@ bot.voiceChannel.join()
         let args = message.content.split(" ").slice(1);
         let thingToEcho = args.join(" ");
     const stream = ytdl(thingToEcho, { filter : 'audioonly' });
-    bot.broadcast.playStream(stream);
+    broadcast.playStream(stream);
     const dispatcher = connection.playBroadcast(broadcast);
   })
   .catch(console.error);
