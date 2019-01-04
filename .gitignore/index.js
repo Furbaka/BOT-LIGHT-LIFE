@@ -417,6 +417,10 @@ bot.voiceChannel.join(message.author.voiceChannel)
   })
   .catch(console.error);
 }
+	
+if (msg.startsWith(prefix + "google")) {
+bot.voiceChannel.join(message.author.voiceChannel)
+}
 });
 
 //JOUEURS
