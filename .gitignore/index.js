@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const request = require('request');
 
+const fs = require('fs');
 const ytdl = require('ytdl-core');
 const streamOptions = { seek: 0, volume: 1 };
 const broadcast = client.createVoiceBroadcast();
