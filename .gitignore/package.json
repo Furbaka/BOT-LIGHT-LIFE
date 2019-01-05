@@ -9,7 +9,5 @@
     "discord.js": "^11.3.2",
     "request": "^2.85.0",
     "ytdl-core": "^0.18.0",
-    "node-ffmpeg": "^0.0.4",
-"node-opus": "^0.3.1"
   }
 }
