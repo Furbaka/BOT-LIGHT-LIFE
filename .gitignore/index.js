@@ -409,7 +409,7 @@ if (msg.startsWith(prefix + "play")) {
 const broadcast = client.createVoiceBroadcast();
 	let args = message.content.split(" ").slice(1);
 	let thingToEcho = args.join(" ");
-bot.voiceChannel.join(message.author.voiceChannel)
+message.member.voiceChannel.join()
   .then(connection => {
     const stream = ytdl(thingToEcho, { filter : 'audioonly' });
     broadcast.playStream(stream);
@@ -419,7 +419,7 @@ bot.voiceChannel.join(message.author.voiceChannel)
 }
 	
 if (msg.startsWith(prefix + "google")) {
-message.author.voiceChannel.join()
+message.member.voiceChannel.leave()
 }
 //GARFIELD
     if (message.content == prefix + "garfield") {
