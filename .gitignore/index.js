@@ -419,8 +419,50 @@ bot.voiceChannel.join(message.author.voiceChannel)
 }
 	
 if (msg.startsWith(prefix + "google")) {
-bot.voiceChannel.join(message.author.voiceChannel.id)
+message.author.voiceChannel.join()
 }
+//GARFIELD
+    if (message.content == prefix + "garfield") {
+
+	message.delete();
+	    
+    	var imagegarf = ["https://pbs.twimg.com/media/DtB_yXVXoAAw4kU.jpg",
+			"https://pbs.twimg.com/media/DwHcArvUYAAM9Nq.jpg",
+			"https://pbs.twimg.com/media/DwHFalOUwAAwlfi.jpg",
+			"https://pbs.twimg.com/media/DwGl9FAVAAAA1ue.jpg",
+			"https://pbs.twimg.com/media/DwGIAKiUwAA3T_j.jpg",
+			"https://pbs.twimg.com/media/DwFsFFoVYAA9Lgg.jpg",
+			"https://pbs.twimg.com/media/DwFRQ-dUUAERIcq.jpg",
+			"https://pbs.twimg.com/media/DwE3O3tU0AI67iE.jpg",
+			"https://pbs.twimg.com/media/DwCd5EXV4AAUJjS.jpg",
+		        "https://pbs.twimg.com/media/DwCC1yCVsAAtXrJ.jpg",
+			"https://pbs.twimg.com/media/DwBm-1qU8AA-79p.jpg",
+			"https://pbs.twimg.com/media/DwBM8GrVAAAzWts.jpg",
+			"https://pbs.twimg.com/media/DwAxFKVU0AAb9Hu.jpg",
+			"https://pbs.twimg.com/media/DwAcRbaVsAAekh1.jpg",
+			"https://pbs.twimg.com/media/Dv_5ldVV4AEChot.jpg",
+			"https://pbs.twimg.com/media/Dv9LPmyUYAA6RtG.jpg",
+			"https://pbs.twimg.com/media/Dv8sJ-HU8AAVBRZ.jpg",
+			"https://pbs.twimg.com/media/Dv8Vv8ZVYAA7tMV.jpg",
+			"https://pbs.twimg.com/media/Dv7-gLhVsAAF9ii.jpg",
+			"https://pbs.twimg.com/media/Dv7Z4RPUwAA1E3F.jpg",
+			"https://pbs.twimg.com/media/Dv7GGvFUcAEgH72.jpg",
+			"https://pbs.twimg.com/media/Dv6n1FzUUAA6BG-.jpg",
+			"https://pbs.twimg.com/media/Dv39AvQV4AA0QTQ.jpg",
+			"https://pbs.twimg.com/media/Dv3hmk1UwAACEll.jpg",
+			"https://pbs.twimg.com/media/Dv3GqgIUYAA38oO.jpg",
+			"https://pbs.twimg.com/media/Dv2uJZuUYAAWaO6.jpg",
+			"https://pbs.twimg.com/media/Dv2RazMVsAAwwNg.jpg",
+			"https://pbs.twimg.com/media/Dv13rH6VYAAWxNF.jpg"];
+            var resultgarf = Math.floor((Math.random() * imagegarf.length) + 0);
+            
+            var embedgarf = new Discord.RichEmbed()
+	    .setImage(imagegarf[resultgarf])
+            .setColor("ffa303")
+	    .setFooter("for " + message.author.username , message.author.avatarURL)
+    
+            message.channel.sendEmbed(embedgarf);
+	}
 });
 
 //JOUEURS
