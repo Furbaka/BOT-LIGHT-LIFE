@@ -33,41 +33,36 @@ bot.on('message', message => {
     let args = cont.slice(1);
 
 //SONDAGE
-    if (message.content.startsWith(prefix + "sondage")) {
+    if (msg.startsWith(prefix + "poll")) {
 	    
 	message.delete();
 	    
         let args = message.content.split(" ").slice(1);
         let thingToEcho = args.join(" ");
-        var embedS = new Discord.RichEmbed()
-            .setTitle("SONDAGE")
-	    .setDescription("Question de "+ message.author)
+        var embedPoll = new Discord.RichEmbed()
+            .setTitle("POLL")
+	    .setDescription(message.author + " ask")
 	    .setThumbnail("https://qph.fs.quoracdn.net/main-qimg-49b8b38b8301a67c52f18ab79d927827.webp")
-            .addField(thingToEcho + " ", "Répondre avec :white_check_mark: ou :x:\n ", false)
+            .addField(thingToEcho + " ", "Reply with :white_check_mark: or :x:\n ", false)
             .setColor("0xB40404")
             .setTimestamp();
-        message.channel.sendEmbed(embedS)
+        message.channel.sendEmbed(embedPoll)
         .then(function (message) {
         message.react("✅");
         message.react("❌");
      });
      }
 
-//RIGOLO
-    if (message.content === prefix + "rigolo"){
-        message.channel.sendMessage("TU ES MOCHE !");
-        console.log("Commande effectué");
-    }
 //SERV INFO
     if (message.content === prefix + "info"){
         var embed = new Discord.RichEmbed()
 		.setThumbnail(message.guild.iconURL)
 		.setTitle("INFO")
-		.setDescription("Information du serveur")
-		.addField("Nom", message.guild.name)
-		.addField("Membres", message.guild.memberCount)
+		.setDescription("Server Info")
+		.addField("Name", message.guild.name)
+		.addField("Members", message.guild.memberCount)
 		.setColor("0xF4D03F")
-		.setFooter("BOT CRÉÉ PAR MISTIGRIX")
+		.setFooter("BOT CREATED BY FURBAKA")
         message.channel.sendEmbed(embed);
     
 
@@ -75,12 +70,15 @@ bot.on('message', message => {
 //AVATAR
     if (message.content == prefix + "avatar") {
      // Send the user's avatar URL
-        message.channel.send(message.author.avatarURL);
-    }
-//TROP DROLE
-    if (message.content === prefix + "troprigolo"){
-        message.channel.sendMessage("JE T'AIME PAS !");
-        console.log("Commande effectué");
+	         var embedavatar = new Discord.RichEmbed()
+		.setThumbnail(message.guild.iconURL)
+		.setTitle("INFO")
+		.setDescription("Server Info")
+		.addImage(message.author.avatarURL)
+		.addField("Members", message.guild.memberCount)
+		.setColor("0xF4D03F")
+		.setFooter(message.author.name, message.author.avatarURL)
+        message.channel.sendEmbed(embed);
     }
 //WAE
     if (message.content.includes(" WAE") || message.content.includes(" wae")){
@@ -96,19 +94,6 @@ bot.on('message', message => {
 			var result = Math.floor((Math.random() * sayings.length) + 0);
 			message.channel.sendMessage(sayings[result], true);
     }
-//DAB
-    if (message.content.includes(" DAB") || message.content.includes(" dab")){
-	var knuckles = bot.emojis.get("432968588383748116");
-	var lolidragon = bot.emojis.get("433289550375419904");
-	var dab = bot.emojis.get("432915228947120129");
-	var parrot = bot.emojis.get("432970357536718858.")
-           var sayings = ["LE ${dab} NÉ PA MOR !",
-										"J'EFFECTUE LE ${dab} !",
-										"J'APPRÉCIE DABBER ${dab} !",
-		       								"JE FAIS UN ${dab} DU NEZ !"];
-			var result = Math.floor((Math.random() * sayings.length) + 0);
-			message.channel.sendMessage(sayings[result], true);
-}
 //CREEPY
     if (message.content == prefix + "creepy") {
     	var sayings = ["Mon père m'a souvent mis en garde contre les sosies avant de mourir. Je l'ai vu traverser la rue avec moi.",
@@ -210,12 +195,12 @@ bot.on('message', message => {
 		.setThumbnail("http://i.imgur.com/9eIhQvf.gif")
 		.setTitle("AIDE")
 		.setDescription("COMMANDES")
-		.addField("FUN", "`*rigolo` | `*troprigolo` | `*creepy` | `*blague`")
-		.addField("UTILES", "`*info` (pour voir les informations du serveurs)\n`*invite` (pour inviter le bot sur votre serv)\n`*avatar` (pour avoir votre PP)\n`*aide` (bah... pour l'aide quoi.)\n`*news` (pour voir mes nouveautées)\n`*sondage <question>` (pour faire un sondage)")
-		.addField("JEUX", "\`*multi <NOM DU JEU>\` (Pour faire une recherche de joueurs)")
-		.addField("PLUS", "`*aide nsfw` pour voir des trucs cochons (**seulement dans un channel nsfw**)", true)
+		.addField("FUN", "`*garfield` (Get Random Garfield's Comic)\n`*creepy` | `*blague`")
+		.addField("UTILES", "`*info` (Check Server's Info)\n`*avatar` (Get Your PP)\n`*help` (huh... for the help you know.)\n`*news` (pour voir mes nouveautées)\n`*sondage <question>` (pour faire un sondage)")
+		.addField("JEUX", "\`*multi` (Send invite for play to other players)")
+		.addField("PLUS", "`*help nsfw` For bad guys~ (**Only in nsfw channel**)", true)
 		.setColor("0xF4D14F")
-		.setFooter("BOT CRÉÉ PAR MISTIGRIX, qui a caché des easter eggs...")
+		.setFooter("BOT CREATED BY FURBAKA")
         message.channel.sendEmbed(embed2);
     }
     
