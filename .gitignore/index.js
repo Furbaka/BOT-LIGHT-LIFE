@@ -440,8 +440,19 @@ message.member.voiceChannel.leave()
             message.channel.sendEmbed(embedgarf);
 	}
 //TEST
-if(msg.startWith() == "[knuckles]"){
-message.edit(`${knuckles}`,)
+if(msg.startWith() == "["){
+if(msg.endWith() == "]") {
+message.delete();
+        let args = message.content.split(" ").slice(1);
+        let thingToEcho = args.join(" ");
+        var embedemoji = new Discord.RichEmbed()
+	    .setAuthor(message.author, message.author.avatarURL)
+            .setTitle("RECHERCHE DE JOUEURS")
+	    .setDescription(${thingToEcho})
+            .setColor("0xB40404")
+            .setTimestamp();	
+message.channel.sendEmbed(embedemoji);
+}
 }
 });
 
