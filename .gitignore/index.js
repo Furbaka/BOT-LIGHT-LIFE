@@ -7,7 +7,7 @@ const ytdl = require('ytdl-core')
 var prefix = "*";
 
 bot.on('ready', () => {
-	bot.user.setActivity(bot.guilds.size + 50 + ' servers', { type: 'WATCHING' });
+	bot.user.setActivity(bot.guilds.size + 40 + ' servers', { type: 'WATCHING' });
 	bot.user.setUsername("⚡Rainbow+");
 	
 });
@@ -190,7 +190,7 @@ bot.on('message', message => {
 
     }
 //AIDE
-    if (message.content === prefix + "aide"){
+    if (message.content === prefix + "help"){
         var embed2 = new Discord.RichEmbed()
 		.setThumbnail("http://i.imgur.com/9eIhQvf.gif")
 		.setTitle("AIDE")
@@ -253,15 +253,15 @@ bot.on('message', message => {
 	}
 	}
 //AIDE NSFW
-    if (message.content === prefix + "aide nsfw"){
+    if (message.content === prefix + "help nsfw"){
 	if (message.channel.nsfw === false) {
 	return;}
 	    
         var embed6 = new Discord.RichEmbed()
 		.setThumbnail("http://holly.paheal.net/_images/10f3ed7efc2c3e737b34d755870197b4/2554566%20-%20ELZZombie%20Friendship_is_Magic%20My_Little_Pony%20Rainbow_Dash.png")
-		.setTitle("POUR LES COCHONS 🐷")
-		.setDescription("Vous allez jouir 💦")
-		.addField("Commandes :", "`*nsfw neko` pour avoir des images de petites chattes 😻")
+		.setTitle("For bad Piggies 🐷")
+		.setDescription("You'll cum 💦")
+		.addField("Commands :", "`*nsfw neko` For get random image of little pussy 😻")
 		.setColor("cc55ee")
         message.channel.sendEmbed(embed6);
     }
@@ -301,7 +301,7 @@ bot.on('message', message => {
             var embedX = new Discord.RichEmbed()
 	    .setImage(image[result])
             .setColor("0xF4D14F")
-	    .setFooter("pour " + message.author.username , message.author.avatarURL)
+	    .setFooter("For " + message.author.username , message.author.avatarURL)
     
             message.channel.sendEmbed(embedX);
 	}
@@ -312,26 +312,17 @@ bot.on('message', message => {
 
  	if (msg.startsWith("GG ")){
 		var nam = message.mentions.members.first();
-		if (message.content == "GG " + nam){
+		if (msg == "GG " + nam){
 		message.delete();
         	var embed = new Discord.RichEmbed()
-			.setAuthor(" ", message.author.avatarURL)
+			.setAuthor(nam, message.author.avatarURL)
 			.setThumbnail("http://image.noelshack.com/fichiers/2017/19/1494546676-tumblr-nm6cjahjur1upa971o1-400.gif")
-			.setTitle("Bien ouèj !")
-			.setDescription(message.author + " félicite " + message.mentions.members.first() + "!")
+			.setTitle("Good Game :D !")
+			.setDescription(message.author + " congratulate " + message.mentions.members.first() + "!")
 			.setColor("0xF4D14F")
        		message.channel.sendEmbed(embed);
 		}
-		if (message.content == "gg " + nam){
-		message.delete();
-        	var embed = new Discord.RichEmbed()
-			.setAuthor(" ", message.author.avatarURL)
-			.setThumbnail("http://image.noelshack.com/fichiers/2017/19/1494546676-tumblr-nm6cjahjur1upa971o1-400.gif")
-			.setTitle("Bien ouèj !")
-			.setDescription(message.author + " félicite " + message.mentions.members.first() + "!")
-			.setColor("0xF4D14F")
-       		message.channel.sendEmbed(embed);
-		}
+		
     
 //GL 
 
@@ -380,7 +371,7 @@ const filterbad = (reaction, user) => reaction.emoji.id === '530170778663125022'
   .then(collected => {
 	const reaction = collected.first();
 	console.log(`Collected ${collected.size} ${reaction.count} reactions`)
-		if(collected.size > reaction.count / 2) {
+		if(collected.size > message.reaction.count / 2) {
 message.pin(reaction.message);
 }
 	})
@@ -448,6 +439,10 @@ message.member.voiceChannel.leave()
     
             message.channel.sendEmbed(embedgarf);
 	}
+//TEST
+if(msg.startWith() == "[knuckles]"){
+message.edit(`${knuckles}`,)
+}
 });
 
 //JOUEURS
