@@ -2,9 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const request = require('request');
 
-var ffmpeg = require('ffmpeg');
-var opusscript = require("opusscript");
-var opus = require('node-opus');
+const opus = require('node-opus');
 const ytdl = require('ytdl-core')
 
 var prefix = "*";
